@@ -1,0 +1,67 @@
+databaseChangeLog:
+#databaseChangeLog:
+#    - changeSet:
+#        id: create-database
+#        author: Ihor
+#        changes:
+#          - sql: CREATE DATABASE currency_exchange_db;
+#
+#    - changeSet:
+#        id: create-exchange-rates-table
+#        author: Ihor
+#        changes:
+#          - createTable:
+#              tableName: exchange_rates
+#              columns:
+#                - column:
+#                    name: id
+#                    type: SERIAL
+#                    autoIncrement: true
+#                    constraints:
+#                      primaryKey: true
+#                - column:
+#                    name: success
+#                    type: BOOLEAN
+#                    defaultValueBoolean: false
+#                - column:
+#                    name: date
+#                    type: DATE
+#                - column:
+#                    name: timestamp
+#                    type: TIMESTAMP
+#                - column:
+#                    name: base
+#                    type: VARCHAR(3)
+#              constraints:
+#                primaryKey: true
+#
+#    - changeSet:
+#        id: create-currency-rates-table
+#        author: Ihor
+#        changes:
+#          - createTable:
+#              tableName: currency_rates
+#              columns:
+#                - column:
+#                    name: id
+#                    type: SERIAL
+#                    autoIncrement: true
+#                    constraints:
+#                      primaryKey: true
+#                - column:
+#                    name: currency_code
+#                    type: VARCHAR(3)
+#                - column:
+#                    name: exchange_rate
+#                    type: DECIMAL(10, 6)
+#                - column:
+#                    name: exchange_rates_id
+#                    type: INT
+#              constraints:
+#                primaryKey: true
+#          - addForeignKeyConstraint:
+#              baseTableName: currency_rates
+#              baseColumnNames: exchange_rates_id
+#              referencedTableName: exchange_rates
+#              referencedColumnNames: id
+#              constraintName: fk_exchange_rates

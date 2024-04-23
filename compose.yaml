@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres'
+    entrypoint:
+      - 'POSTGRES_DB=currency_exchange_db'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - '5432:5432'
